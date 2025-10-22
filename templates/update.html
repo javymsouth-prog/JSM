@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Update Courses for {{ student.name }}</h2>
+<form method="post">
+    <label>Courses:</label><br>
+    {% for course in ['Math', 'Science', 'English', 'History'] %}
+        <input type="checkbox" name="courses" value="{{ course }}"
+        {% if course in student.courses %}checked{% endif %}> {{ course }}
+    {% endfor %}
+    <br><br>
+    <button type="submit">Update Courses</button>
+</form>
+{% endblock %}
+``
